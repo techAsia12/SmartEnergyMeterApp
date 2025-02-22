@@ -1,6 +1,7 @@
 package com.example.smartenergymeter;
 
 import android.os.Bundle;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
@@ -21,12 +22,14 @@ public class MainActivity extends AppCompatActivity {
         webView.setWebViewClient(new WebViewClient());
 
         webView.getSettings().setJavaScriptEnabled(true);
+        webView.getSettings().setDomStorageEnabled(true);
         webView.getSettings().setBuiltInZoomControls(true);
+        webView.getSettings().setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
         webView.getSettings().setDisplayZoomControls(false);
 
         webView.setScrollbarFadingEnabled(false);
         webView.setOverScrollMode(WebView.OVER_SCROLL_ALWAYS);
 
-        webView.loadUrl("https://smartenergymeter.techasiamechatronics.com/");
+        webView.loadUrl("https://smartenergymeter.techasiamechatronics.com");
     }
 }
